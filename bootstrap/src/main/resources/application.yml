@@ -1,0 +1,40 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: contact
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:h2:mem:testD;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    platform: h2
+  h2:
+    console:
+      enabled: true
+      path: /console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  liquibase:
+    change-log: classpath:db/change-log-files.yml
+    enabled: true
+  boot:
+    admin:
+      url: http://localhost:8080
+      username: admin
+      password: admin
+      client:
+        metadata:
+          user:
+            name : ${spring.security.user.name}
+            password : ${spring.security.user.password}
+
+  security:
+    user:
+      name: client
+      password: client
+    enabled: false
+logging:
+  file: logs/spring-boot-logging.log

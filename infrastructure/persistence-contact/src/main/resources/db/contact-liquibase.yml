@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      - file: classpath:db/changelogs/01-create-table-contact.yml

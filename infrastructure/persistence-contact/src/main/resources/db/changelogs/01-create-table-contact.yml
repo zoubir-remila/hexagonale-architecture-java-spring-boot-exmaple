@@ -1,0 +1,25 @@
+databaseChangeLog:
+      - changeSet:
+          author: zoubir remila
+          id: 01
+          changes:
+              - createTable:
+                  tableName: contact
+                  columns:
+                    - column:
+                        name: id
+                        type: int
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                          primaryKeyName: contact_id_pk
+                    - column:
+                        name: first_name
+                        type: varchar(255)
+                    - column:
+                        name: last_name
+                        type: varchar(255)
+                    - column:
+                        name: date_of_birth
+                        type: Date
+
